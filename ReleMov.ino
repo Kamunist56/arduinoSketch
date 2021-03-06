@@ -25,8 +25,7 @@ void loop(){
   switchLamp(relPin2, A0);
 
   printStatus();
-//  Serial.println(analogRead(A3));
-//  delay(1000);   
+  
 }
 
 void checkLamp(int pin) {
@@ -54,13 +53,12 @@ void printStatus(){
 
 void switchLamp(int relPin, int pinmov){
 
-//    if ((analogRead(pinmov) > 500) && (analogRead(A3) > 5))
       if (analogRead(pinmov) > 500)
       {
           digitalWrite(relPin, LOW);
           Serial.println("Движение");
       }   
-      else //if (analogRead(pinmov) < 500)
+      else 
       {
           digitalWrite(relPin, HIGH);
           newStatus = false;
